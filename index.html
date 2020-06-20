@@ -18,14 +18,14 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <title>Work Day Scheduler</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Get it Done.</title>
   </head>
 
   <body>
     <header class="jumbotron">
-      <h1 class="display-3">Work Day Scheduler</h1>
-      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <h1 class="display-3">Done.</h1>
+      <p class="lead">A simple app for simple scheduling</p>
       <p id="currentDay" class="lead"></p>
       <div id="date"></div>
       <div id="time"></div>
@@ -50,13 +50,17 @@
           var timeEl = $("#time");
           var dateEl = $("#date");
           var now = moment();
+          // moment().format('LLLL')
           var formattedTime = now.format("h:mm:ss");
           var formattedDate = now.format("dddd, MMMM do");
-          timeEl.text(formattedTime);
-          dateEl.text(formattedDate);
+          timeEl.text(formattedDate +" "+ formattedTime);
+          // dateEl.text(formattedDate);
         }
       });
-        </script>
+
+      var userInput = [""]
+      
+    </script>
     </header>
     <div class="container">
       <!-- use class for "past", "present", and "future" to apply styles
@@ -156,7 +160,6 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-    <!-- link your javascript files here. (Must be after jquery is linked!
-      You should be able to explain why that is to be "employer ready".) -->
+    <script src="assets/script.js"></script>
   </body>
 </html>
