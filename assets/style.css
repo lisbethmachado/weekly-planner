@@ -11,6 +11,7 @@ body {
     color: #000000;
     border-left: 1px dashed #000000;
     padding: 0px;
+
   }
   
   .jumbotron {
@@ -67,6 +68,7 @@ body {
     border-bottom-right-radius: 15px;
     background-color: red;
     color: white;
+    padding: 5px;
   }
   
   .saveBtn i:hover {
