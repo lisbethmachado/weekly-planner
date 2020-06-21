@@ -1,57 +1,47 @@
-var text = $("<text-area>")
-var saveBtn = $(".saveBtn")
+// use class for "past", "present", and "future" to apply styles
+// to the time-block divs accordingly. (you'll need to do this in your
+// JavaScript code. Don't forget to delete this comment when you are done.
+// The classes are used as examples below and should be removed from the html
+// in the finished product.)
+var userInput = [];
 
-$("<text-area>").on("click", function (event) {
-    event.preventDefault();
-    var text = $(".description").val().trim();
-    text.push(text);
+var text = document.getElementById(".description")
 
-    // Calling renderButtons which handles the processing of our movie array
-    saveBtn();
-  });
-  $(".present").attr(now);
+init();
 
-  var userInput = [""]
-  moment().calendar(null, {
-    sameDay: function (now) {
-      if (this.isBefore(now)) {
-        return '[Will Happen Today]';
-      } else {
-        return '[Happened Today]';
-      }
-      /* ... */
-    }
-  });
+function init() {
+    // Get stored todos from localStorage
+    // Parsing the JSON string to an object
+    var storedTasks = JSON.parse(localStorage.getItem(".description"));
+};
+    moment().calendar(null, {
+        sameDay: function (now) {
+            if (this.isBefore(now)) {
+                return '[Will Happen Today]';
+            } else {
+                return '[Happened Today]';
 
-  $(function() {
-    $(".saveBtn").on("click", function(){
-      var value = $(this).siblings(".description").val();
-      var time = $(this).parent().attr("time")
-      localStorage.setItem(time, value);
-    }) ; 
-  });
-// // on page load date displayed with moment js 
+            }
+        }
+    });
 
-// var current time 
 
-// var PresentBlock
+    function storeTask() {
+        $(".saveBtn").on("click", function () {
+        localStorage.setItem(".description", JSON.stringify(userInput));
+        event.preventDefault();
+        userInput.push(".description");
+        console.log(this)
+    });
+};
 
-//  on saveBtn event listener store the description
-//  var storeDescription
-// localStorage setItem storeDescription
-
-// if current time === PresentBLock {
-//     addClass present
-// } 
-// else if {
-//     current time < PresentBLock {
-//         remove present class 
-//         addclass past
-//     }
-//     else {
-//         remove past
-//         remove present 
-//         add present
-//     }
-// }
-// local storage getItem
+    $(function () {
+        $(".saveBtn").on("click", function () {
+            var value = $(this).siblings(".description").val();
+            var time = $(this).parent().attr("#time")
+            localStorage.setItem(time, value);
+            userInput.push(".description");
+            event.preventDefault();
+            alert("You saved a task!")
+        });
+    });
