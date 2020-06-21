@@ -3,15 +3,32 @@ var saveBtn = $(".saveBtn")
 
 $("<text-area>").on("click", function (event) {
     event.preventDefault();
-
-    // This line grabs the input from the textbox
     var text = $(".description").val().trim();
-
-    // The movie from the textbox is then added to our array
     text.push(text);
 
     // Calling renderButtons which handles the processing of our movie array
     saveBtn();
+  });
+  $(".present").attr(now);
+
+  var userInput = [""]
+  moment().calendar(null, {
+    sameDay: function (now) {
+      if (this.isBefore(now)) {
+        return '[Will Happen Today]';
+      } else {
+        return '[Happened Today]';
+      }
+      /* ... */
+    }
+  });
+
+  $(function() {
+    $(".saveBtn").on("click", function(){
+      var value = $(this).siblings(".description").val();
+      var time = $(this).parent().attr("time")
+      localStorage.setItem(time, value);
+    }) ; 
   });
 // // on page load date displayed with moment js 
 
@@ -37,11 +54,4 @@ $("<text-area>").on("click", function (event) {
 //         add present
 //     }
 // }
-// local storage getItem 
-$(function() {
-    $(".saveBtn").on("click", function(){
-      var value = $(this).siblings(".description").val();
-      var time = $(this).parent().attr("id")
-      localStorage.setItem(time, value);
-    }) ; 
-  });
+// local storage getItem

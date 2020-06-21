@@ -46,35 +46,33 @@ body {
   }
   
   .past {
-    background-color: white;
+    background-color: #ECEFF1;
     color: white;
-    
   }
   
   .present {
-    background-color: #d3d3d3;
+    background-color: #CFD8DC;
     color: white;
     
   }
   
   .future {
-    background-color: white;
+    background-color: #B0BEC5;
     color: white;
   }
   
   .saveBtn {
-    border-left: 1px solid black;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
-    background-color: red;
+    background-color:#607D8B;
     color: white;
     padding: 5px;
   }
   
   .saveBtn i:hover {
     font-size: 20px;
-    transition: all .3s ease-in-out;
-    background-color: rgb(136, 221, 240);
+    transition: all .5s ease-in-out;
+    background-color: #607D8B;
     
   }
   
